@@ -1,0 +1,230 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.app-header,
+.app-header.navbar {
+  background-color: #2f3542 !important;
+  color: #eaeaea !important;
+  border-bottom: 1px solid #444;
+}
+
+.app-header .nav-link,
+.app-header .navbar-nav .nav-link,
+.app-header a,
+.app-header i {
+  color: #eaeaea !important;
+}
+
+.app-header .nav-link:hover {
+  color: #ffffff !important;
+}
+
+/* 導覽列三個控制項使用相同高度與垂直中心。 */
+.app-header .navbar-nav {
+  align-items: center;
+}
+
+.app-header .navbar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1;
+}
+
+.app-header .navbar-nav .nav-link > i {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* 放大側邊選單切換圖示，並置中於點擊區域。 */
+.app-header .nav-link[data-lte-toggle="sidebar"] {
+  min-width: 44px;
+}
+
+.app-header .nav-link[data-lte-toggle="sidebar"] .bi-list {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.app-header .nav-link[data-lte-toggle="sidebar"] .bi-list::before {
+  display: block;
+  vertical-align: 0;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.app-sidebar,
+.app-sidebar .sidebar-wrapper {
+  background-color: #343a40 !important;
+  color: #d8d8d8 !important;
+}
+
+
+/* menu 文字 */
+
+.app-sidebar a,
+.app-sidebar .nav-link,
+.app-sidebar .nav-link p,
+.app-sidebar .nav-icon,
+.app-sidebar .nav-arrow,
+.app-sidebar .brand-text {
+  color: #d8d8d8 !important;
+}
+
+
+/* hover */
+
+.app-sidebar .nav-link:hover {
+  background-color: #495057 !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+}
+
+
+/* active */
+
+.app-sidebar .nav-link.active {
+  background-color: #495057 !important;
+  color: #ffd43b !important;
+  border-radius: 6px;
+}
+
+
+/* active icon */
+
+.app-sidebar .nav-link.active p,
+.app-sidebar .nav-link.active i {
+  color: #ffd43b !important;
+}
+
+/* _layout */
+/* 子選單被選到時，文字與 icon 變黃色 */
+.sidebar-menu .nav-treeview .nav-link.active p,
+.sidebar-menu .nav-treeview .nav-link.active i {
+  color: yellow !important;
+}
+
+.sidebar-menu .nav-treeview .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ===== 右上角使用者下拉選單：避免變灰、半透明、被蓋住 ===== */
+.app-header .dropdown-menu {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.app-header .dropdown-menu .dropdown-item {
+  color: #212529 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  background-color: #ffffff !important;
+}
+
+.app-header .dropdown-menu .dropdown-item i {
+  color: #212529 !important;
+  opacity: 1 !important;
+}
+
+.app-header .dropdown-menu .dropdown-item:hover {
+  background-color: #f1f3f5 !important;
+  color: #000000 !important;
+}
+
+/* Login */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.login-header {
+  height: 48px;
+  background: #888;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 26px;
+}
+
+.login-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.login-body {
+  padding: 24px 22px 18px 22px;
+}
+
+.login-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.login-label {
+  width: 58px;
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+
+[v-cloak] { display:none !important; }
+body { margin-bottom:0; }
+.login-box { max-width:calc(100vw - 24px); }
+.login-label { flex-shrink:0; }

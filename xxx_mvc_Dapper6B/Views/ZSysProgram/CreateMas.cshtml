@@ -1,0 +1,76 @@
+﻿@model mvc_Dapper.Models.Entity.z_sys_program
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>z_sys_program</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateMas">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>    
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="is_enabled">
+                    @Html.DisplayNameFor(model=>model.is_enabled)
+                </label>                    
+            </div>   
+
+            <div class="form-group">
+                <label asp-for="mno" class="control-label"></label>
+                <input asp-for="mno" class="form-control">
+                <span asp-validation-for="mno" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="mname" class="control-label"></label>
+                <input asp-for="mname" class="form-control">
+                <span asp-validation-for="mname" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="code_no" class="control-label"></label>
+                <select asp-for="code_no" class="form-select">
+                    <option value="U">一般使用者</option>
+                    <option value="M">資訊管理員</option>
+                </select>
+                <span asp-validation-for="code_no" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="no_sort" class="control-label"></label>
+                <input asp-for="no_sort" class="form-control">
+                <span asp-validation-for="no_sort" class="text-danger"></span>                    
+            </div>
+
+            <div class="form-group">
+                <label asp-for="remark" class="control-label"></label>
+                <input asp-for="remark" class="form-control">
+                <span asp-validation-for="remark" class="text-danger"></span>                    
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary">
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</div>
+
+<div>
+    <a asp-action="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

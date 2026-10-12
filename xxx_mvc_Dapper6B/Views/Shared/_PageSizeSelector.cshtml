@@ -1,0 +1,47 @@
+@model mvc_Dapper.Models.ViewModel.PageInfo
+
+<form asp-action="@Model.ActionName" method="get" class="d-flex align-items-center">
+    <label class="me-2">每頁筆數</label>
+
+    <select name="pageSize" class="form-select me-2" style="width:100px;" onchange="this.form.submit();">
+
+        @if (Model.PageSize == 5)
+        {
+            <option value="5" selected>5</option>
+        }
+        else
+        {
+            <option value="5">5</option>
+        }
+
+        @if (Model.PageSize == 10)
+        {
+            <option value="10" selected>10</option>
+        }
+        else
+        {
+            <option value="10">10</option>
+        }
+
+        @if (Model.PageSize == 20)
+        {
+            <option value="20" selected>20</option>
+        }
+        else
+        {
+            <option value="20">20</option>
+        }
+
+        @if (Model.PageSize == 50)
+        {
+            <option value="50" selected>50</option>
+        }
+        else
+        {
+            <option value="50">50</option>
+        }
+
+    </select>
+
+    <input type="hidden" name="page" value="1" />
+</form>

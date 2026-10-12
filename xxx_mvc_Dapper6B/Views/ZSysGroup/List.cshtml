@@ -1,0 +1,149 @@
+@model mvc_Dapper.Models.ViewModel.ZSysGroupListVM
+
+@{
+    ViewData["Title"] = "群組資料維護";
+}
+
+<style>
+    .group-row {
+        cursor: pointer;
+    }
+
+    .group-row:hover {
+        background-color: #fff3cd !important;
+    }
+
+    .group-row-selected {
+        background-color: #e9ecef !important;
+    }
+
+    .group-action-area a {
+        margin-right: 6px;
+    }
+</style>
+
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">
+        <i class="bi bi-plus-circle"></i> Create New
+    </a>
+</p>
+
+@if (Model != null && Model.Groups != null && Model.Groups.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-primary">
+            <tr>
+                <th>啟用</th>
+                <th>代號</th>
+                <th>名稱</th>
+                <th>備註</th>
+                <th style="width: 260px;">功能</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Groups)
+            {
+                string selectedClass = "";
+
+                if (item.mno == Model.SelectedGroupNo)
+                {
+                    selectedClass = "group-row-selected";
+                }
+
+                <tr class="group-row @selectedClass"
+                    onclick="location.href='@Url.Action("List", "ZSysGroup", new { groupNo = item.mno })'">
+
+                    <td>
+                        @if (item.is_enabled)
+                        {
+                            <span class="badge bg-success">啟用</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">停用</span>
+                        }
+                    </td>
+
+                    <td>@item.mno</td>
+                    <td>@item.mname</td>
+                    <td>@item.remark</td>
+
+                    <td class="text-nowrap group-action-area"
+                        onclick="event.stopPropagation();">
+
+                        <a asp-action="Edit"
+                           asp-route-rowid="@item.rowid"
+                           class="btn btn-outline-primary btn-sm">
+                            Edit
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-rowid="@item.rowid"
+                           class="btn btn-outline-danger btn-sm">
+                            Delete
+                        </a>
+
+                        <a asp-action="GroupUsers"
+                           asp-route-groupNo="@item.mno"
+                           class="btn btn-warning btn-sm">
+                            群組用戶
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        目前沒有資料。
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model?.SelectedGroupNo))
+{
+    <div class="mt-3 mb-2">
+        <span class="badge bg-warning text-dark p-2">
+            群組用戶
+        </span>
+
+        <span class="ms-2">
+            @Model.SelectedGroupNo
+
+            @if (Model.SelectedGroup != null)
+            {
+                <text> - @Model.SelectedGroup.mname</text>
+            }
+        </span>
+    </div>
+
+    if (Model.Details != null && Model.Details.Count > 0)
+    {
+        <table class="table table-bordered table-sm" style="width: 420px;">
+            <thead class="table-light">
+                <tr>
+                    <th style="width: 100px;">代號</th>
+                    <th>名稱</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var det in Model.Details)
+                {
+                    <tr>
+                        <td>@det.user_no</td>
+                        <td>@det.mname</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-secondary" style="width: 420px;">
+            此群組目前尚未設定用戶。
+        </div>
+    }
+}

@@ -1,0 +1,89 @@
+@model mvc_Dapper.Models.ViewModel.ZSysGroupUsersVM
+
+@{
+    ViewData["Title"] = "群組用戶";
+}
+
+<div class="card old-form-card shadow">
+
+    <div class="old-form-header">
+        群組用戶
+    </div>
+
+    <div class="old-form-body">
+
+        <div class="row mb-2">
+            <label class="col-md-2 old-label">代號</label>
+            <div class="col-md-10 pt-2">
+                @Model.group_no
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-md-2 old-label">名稱</label>
+            <div class="col-md-10 pt-2">
+                @Model.group_name
+            </div>
+        </div>
+
+        <form asp-action="GroupUsers" method="post">
+
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="groupNo" value="@Model.group_no" />
+
+            <table class="table table-bordered table-sm" style="width: 420px;">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 70px;">勾選</th>
+                        <th style="width: 100px;">代號</th>
+                        <th>名稱</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model.Users != null && Model.Users.Count > 0)
+                    {
+                        @foreach (var item in Model.Users)
+                        {
+                            <tr>
+                                <td class="text-center">
+                                    <input type="checkbox"
+                                           name="selectedUserNo"
+                                           value="@item.user_no"
+                                           class="form-check-input"
+                                           @(item.is_checked ? "checked" : "") />
+                                </td>
+                                <td>@item.user_no</td>
+                                <td>@item.mname</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="3" class="text-center text-muted">
+                                目前沒有用戶資料。
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="old-btn-area">
+                <button type="submit" class="btn btn-warning btn-sm">
+                    確認
+                </button>
+
+                <a asp-action="List"
+                   asp-route-groupNo="@Model.group_no"
+                   class="btn btn-secondary btn-sm">
+                    取消
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

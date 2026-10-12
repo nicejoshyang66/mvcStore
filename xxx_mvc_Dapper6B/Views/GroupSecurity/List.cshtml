@@ -1,0 +1,286 @@
+@model mvc_Dapper.Models.ViewModel.GroupSecurityVM
+
+@{
+    ViewData["Title"] = "群組權限資料維護";
+
+    var sourceGroups = ViewBag.SourceGroups as List<mvc_Dapper.Models.ViewModel.GroupSecurityMasterVM>;
+}
+
+<div class="container-fluid">
+
+    <form asp-controller="GroupSecurity" asp-action="Save" method="post">
+
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="SelectedMno">
+        <input type="hidden" asp-for="SelectedMname">
+
+        <div class="card shadow-sm">
+
+            <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    群組權限資料維護
+                </h4>
+
+                <div>
+                    <button type="button"
+                            class="btn btn-primary btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#copyGroupModal">
+                        複製群組程式
+                    </button>
+                </div>
+            </div>
+
+            <div class="card-body">
+
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-info">
+                        @TempData["Message"]
+                    </div>
+                }
+
+                <div class="row mb-3">
+
+                    <div class="col-md-2">
+
+                        <label class="form-label">群組代號</label>
+
+                        <select name="mno"
+                                class="form-select"
+                                onchange="location.href='@Url.Action("List", "GroupSecurity")?mno=' + this.value">
+
+                            @foreach (var item in Model.Groups)
+                            {
+                                if (item.mno == Model.SelectedMno)
+                                {
+                                    <option value="@item.mno" selected>
+                                        @item.mno
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option value="@item.mno">
+                                        @item.mno
+                                    </option>
+                                }
+                            }
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">群組名稱</label>
+                        <input class="form-control" value="@Model.SelectedMname" readonly>
+                    </div>
+
+                    <div class="col-md-6 d-flex align-items-end">
+
+                        <button type="submit" class="btn btn-warning me-2" style="min-width: 110px;">
+                            存檔
+                        </button>
+
+                        <a asp-controller="GroupSecurity"
+                           asp-action="Cancel"
+                           asp-route-mno="@Model.SelectedMno"
+                           class="btn btn-warning"
+                           style="min-width: 110px;">
+                            取消
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="table-responsive">
+
+                    <table class="table table-bordered table-hover align-middle">
+
+                        <thead class="table-dark text-center">
+                            <tr>
+                                <th style="width: 140px;">程式代號</th>
+                                <th style="width: 180px;">程式名稱</th>
+                                <th style="width: 100px;">新增</th>
+                                <th style="width: 100px;">修改</th>
+                                <th style="width: 100px;">刪除</th>
+                                <th style="width: 100px;">簽核</th>
+                                <th style="width: 220px;">備註</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            @if (Model.Details == null || Model.Details.Count == 0)
+                            {
+                                <tr>
+                                    <td colspan="7" class="text-center text-muted">
+                                        此群組目前沒有權限資料
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < Model.Details.Count; i++)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+
+                                            @Model.Details[i].program_no
+
+                                            <input type="hidden" asp-for="Details[i].rowid">
+                                            <input type="hidden" asp-for="Details[i].target_no">
+                                            <input type="hidden" asp-for="Details[i].program_no">
+                                            <input type="hidden" asp-for="Details[i].program_name">
+
+                                        </td>
+
+                                        <td>
+                                            @Model.Details[i].program_name
+                                        </td>
+
+                                        <td class="text-center">
+                                            <input asp-for="Details[i].is_add" class="form-check-input">
+                                        </td>
+
+                                        <td class="text-center">
+                                            <input asp-for="Details[i].is_edit" class="form-check-input">
+                                        </td>
+
+                                        <td class="text-center">
+                                            <input asp-for="Details[i].is_delete" class="form-check-input">
+                                        </td>
+
+                                        <td class="text-center">
+                                            <input asp-for="Details[i].is_confirm" class="form-check-input">
+                                        </td>
+
+                                        <td>
+                                            <input asp-for="Details[i].remark" class="form-control form-control-sm">
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+<form asp-controller="GroupSecurity" asp-action="CopyGroupSecurity" method="post">
+
+    @Html.AntiForgeryToken()
+
+    <div class="modal fade" id="copyGroupModal" tabindex="-1" role="dialog" aria-labelledby="copyGroupModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="copyGroupModalLabel">
+                        複製群組程式
+                    </h5>
+
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <input type="hidden" name="targetNo" value="@Model.SelectedMno">
+
+                    <div class="form-group row mb-3">
+
+                        <label class="col-sm-3 col-form-label">
+                            群組代號
+                        </label>
+
+                        <div class="col-sm-9">
+                            <input class="form-control" value="@Model.SelectedMno" readonly>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row mb-3">
+
+                        <label class="col-sm-3 col-form-label">
+                            群組名稱
+                        </label>
+
+                        <div class="col-sm-9">
+                            <input class="form-control" value="@Model.SelectedMname" readonly>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row mb-3">
+
+                        <label class="col-sm-3 col-form-label">
+                            來源群組
+                        </label>
+
+                        <div class="col-sm-9">
+
+                            <select name="sourceNo" class="form-control" required>
+
+                                <option value="">
+                                    請選擇來源群組
+                                </option>
+
+                                @if (sourceGroups != null)
+                                {
+                                    foreach (var item in sourceGroups)
+                                    {
+                                        <option value="@item.mno">
+                                            @item.mno - @item.mname
+                                        </option>
+                                    }
+                                }
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-warning mb-0">
+                        確認複製後，目前群組原本的權限資料會先刪除，再複製來源群組的權限資料。
+                    </div>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="submit" class="btn btn-primary">
+                        確認複製
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        取消
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>

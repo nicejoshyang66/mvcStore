@@ -1,0 +1,55 @@
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                font-family: "Microsoft JhengHei", Arial, sans-serif;
+            }
+
+            body {
+                background-image: url('/images/apps/appbackground.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .input-group .form-control {
+                height: 36px;
+                font-size: 16px;
+            }
+
+            .input-group-text {
+                width: 42px;
+                justify-content: center;
+                background: #e9edf3;
+                border-left: 0;
+            }
+
+            .remember-row {
+                margin-left: 58px;
+                margin-top: -2px;
+                margin-bottom: 12px;
+                font-size: 14px;
+                color: #555;
+            }
+
+            .remember-row input {
+                cursor: pointer;
+            }
+
+            .remember-row label {
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .btn-login {
+                height: 38px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .error-message {
+                color: red;
+                font-size: 15px;
+                margin-top: 12px;
+                text-align: center;
+            }

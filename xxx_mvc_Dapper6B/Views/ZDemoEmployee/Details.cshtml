@@ -1,0 +1,293 @@
+@model mvc_Dapper.Models.Entity.z_demo_employee
+
+@using mvc_Dapper.Models.Entity
+
+@{
+    ViewData["Title"] = "員工明細";
+    var schools = ViewBag.Schools as List<z_demo_employee_school>;
+    var experiences = ViewBag.Experiences as List<z_demo_employee_experience>;
+}
+
+<!--  -->
+<div class="page-title-box">
+    <h3>員工明細</h3>
+</div>
+
+<!--  -->
+<div class="card mb-3 detail-card">
+
+    <div class="card-header">
+        <div class="section-title section-title-primary">
+            員工基本資料
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <table class="table detail-info-table">
+            <tbody>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.is_enabled)
+                    </th>
+                    <td>
+                        @if (Model.is_enabled)
+                        {
+                            <span>
+                                啟用
+                            </span>
+                        }
+                        else
+                        {
+                            <span>
+                                停用
+                            </span>
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.mno)
+                    </th>
+                    <td>
+                        @Html.DisplayFor(model => model.mno)
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.mname)</th>
+                    <td>@Html.DisplayFor(model => model.mname)</td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.no_serial)</th>
+                    <td>@Html.DisplayFor(model => model.no_serial)</td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.dept_no)</th>
+                    <td>
+                        <span class="code-name-code">
+                            @Html.DisplayFor(model => model.dept_no)
+                        </span>
+                        <span class="code-name-text">
+                            @ViewBag.DepartmentName
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.title_no)</th>
+                    <td>
+                        <span class="code-name-code">
+                            @Html.DisplayFor(model => model.title_no)
+                        </span>
+                        <span class="code-name-text">
+                            @ViewBag.TitleName
+                        </span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.date_birth)</th>
+                    <td>
+                        @(Model.date_birth.HasValue ? Model.date_birth.Value.ToString("yyyy-MM-dd") : "")
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.code_gender)</th>
+                    <td>
+                        @if (Model.code_gender == "M")
+                        {
+                            <span>男</span>
+                        }
+                        else if (Model.code_gender == "F")
+                        {
+                            <span>女</span>
+                        }
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.salary_base)</th>
+                    <td>
+                        @(Model.salary_base.HasValue ? Model.salary_base.Value.ToString("N0") : "")
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.tel_home)</th>
+                    <td>@Html.DisplayFor(model => model.tel_home)</td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.adr_home)</th>
+                    <td>@Html.DisplayFor(model => model.adr_home)</td>
+                </tr>
+
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.remark)</th>
+                    <td>@Html.DisplayFor(model => model.remark)</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="card mb-3 detail-card">
+        <div class="card-header">
+            <div class="section-title section-title-success">
+                學歷經歷
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered table-hover table-striped history-table">
+            <thead>
+                <tr>
+                    <th>學校</th>
+                    <th>科系</th>
+                    <th>入學日期</th>
+                    <th>離校日期</th>
+                    <th>畢業狀況</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @if (schools == null || schools.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">
+                            目前沒有學歷資料
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in schools)
+                    {
+                        <tr>
+                            <td>@item.name_school</td>
+                            <td>@item.name_subject</td>
+                            <td>
+                                @(item.date_start.HasValue ? item.date_start.Value.ToString("yyyy-MM-dd") : "")
+                            </td>
+                            <td>
+                                @(item.date_end.HasValue ? item.date_end.Value.ToString("yyyy-MM-dd") : "")
+                            </td>
+                            <td>
+                                @if (item.code_status == "G")
+                                {
+                                    <span>畢業</span>
+                                }
+                                else if (item.code_status == "S")
+                                {
+                                    <span>肄業</span>
+                                }
+                            </td>
+                            <td>
+                                @item.remark
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+<div class="card mb-3 detail-card">
+    
+    <div class="card-header">
+        <div class="section-title section-title-info">
+            工作經歷
+        </div>
+    </div>
+
+
+    <div class="card-body">
+
+        <table class="table table-bordered table-hover table-striped history-table">
+            <thead>
+                <tr>
+                    <th>公司名稱</th>
+                    <th>職稱</th>
+                    <th class="text-end">薪資</th>
+                    <th>到職日期</th>
+                    <th>離職日期</th>
+                    <th>備註</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @if(experiences==null||experiences.Count==0)
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted">
+                            目前沒有工作經歷資料
+                        </td>
+                    </tr>
+                }
+                else 
+                {
+                    foreach(var item in experiences)
+                    {
+                        <tr>
+                            <td>@item.name_company</td>
+                            <td>@item.title_company</td>
+                            <td class="text-end">
+                                @(item.base_salary.HasValue?item.base_salary.Value.ToString("N0"):"")
+                            </td>
+                            <td>
+                                @(item.date_start.HasValue?item.date_start.Value.ToString("yyyy-MM-dd"):"")
+                            </td>
+                            <td>
+                                @(item.date_end.HasValue?item.date_end.Value.ToString("yyyy-MM-dd"):"")
+                            </td>
+                            <td>@item.remark</td>
+                        </tr>                            
+                    }
+                }
+            </tbody>
+
+
+        </table>
+
+
+    </div>
+
+
+</div>
+
+<div class="button-area">
+    
+    <a asp-controller="ZDemoEmployeeSchool"
+     asp-action="List"
+     asp-route-employeeNo="@Model.mno" class="btn btn-outline-primary">
+        學歷資料
+    </a>
+
+    <a asp-controller="ZDemoEmployeeExperience"
+     asp-action="List"
+     asp-route-employeeNo="@Model.mno" class="btn btn-outline-primary">
+        經歷資料
+    </a>
+
+    <a asp-action="Edit" asp-route-id="@Model.rowid" class="btn btn-warning">
+        編輯
+    </a>
+
+    <a asp-action="List" class="btn btn-secondary">
+        返回
+    </a>
+
+</div>

@@ -1,0 +1,274 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\myProject5\\mvc_Dapper6B\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\controllers\\zsysprogramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:controllers\\zsysprogramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\Create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\views\\zsysprogram\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:views\\zsysprogram\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\ListMas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\models\\repo\\zsysprogramrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:models\\repo\\zsysprogramrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\models\\entity\\z_sys_program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:models\\entity\\z_sys_program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\views\\zsysprogram\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:views\\zsysprogram\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\views\\shared\\components\\sidemenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:views\\shared\\components\\sidemenu\\default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\models\\service\\zsysprogramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:models\\service\\zsysprogramservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|d:\\myproject5\\mvc_dapper6b\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00F96172-18D4-4396-9CB9-995D44A476CA}|mvc_Dapper6.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 332,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-28T07:21:43.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Views\\ZSysProgram\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\ZSysProgram\\Edit.cshtml",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Views\\ZSysProgram\\Edit.cshtml",
+              "RelativeToolTip": "Views\\ZSysProgram\\Edit.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAIBMwEwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-03T06:45:53.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\Create.cshtml",
+              "ToolTip": "F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\Create.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-30T08:51:33.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListMas.cshtml",
+              "DocumentMoniker": "F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\ListMas.cshtml",
+              "ToolTip": "F:\\myProject4\\mvc_Dapper\\Views\\ZSysProgram\\ListMas.cshtml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T10:21:24.275Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ZSysProgramRepo.cs",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Models\\Repo\\ZSysProgramRepo.cs",
+              "RelativeDocumentMoniker": "Models\\Repo\\ZSysProgramRepo.cs",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Models\\Repo\\ZSysProgramRepo.cs",
+              "RelativeToolTip": "Models\\Repo\\ZSysProgramRepo.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAABTwD8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T09:34:55.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "z_sys_program.cs",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Models\\Entity\\z_sys_program.cs",
+              "RelativeDocumentMoniker": "Models\\Entity\\z_sys_program.cs",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Models\\Entity\\z_sys_program.cs",
+              "RelativeToolTip": "Models\\Entity\\z_sys_program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T09:41:08.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ZSysProgramController.cs",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Controllers\\ZSysProgramController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ZSysProgramController.cs",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Controllers\\ZSysProgramController.cs",
+              "RelativeToolTip": "Controllers\\ZSysProgramController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T09:32:06.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Views\\ZSysProgram\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\ZSysProgram\\Delete.cshtml",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Views\\ZSysProgram\\Delete.cshtml",
+              "RelativeToolTip": "Views\\ZSysProgram\\Delete.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAIBcwE4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-05-03T05:14:42.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Views\\Shared\\Components\\SideMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Components\\SideMenu\\Default.cshtml",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Views\\Shared\\Components\\SideMenu\\Default.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Components\\SideMenu\\Default.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAIBcwCQAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-29T02:54:31.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ZSysProgramService.cs",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Models\\Service\\ZSysProgramService.cs",
+              "RelativeDocumentMoniker": "Models\\Service\\ZSysProgramService.cs",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Models\\Service\\ZSysProgramService.cs",
+              "RelativeToolTip": "Models\\Service\\ZSysProgramService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-26T02:44:49.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-24T01:55:56.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\myProject5\\mvc_Dapper6B\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\myProject5\\mvc_Dapper6B\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T01:55:53.667Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 68,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

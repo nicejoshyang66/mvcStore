@@ -1,0 +1,144 @@
+@{
+    ViewData["Title"] = "MayAP Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MayAP Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                font-family: "Microsoft JhengHei", Arial, sans-serif;
+            }
+
+            body {
+                background-image: url('/images/apps/appbackground.png');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .input-group .form-control {
+                height: 36px;
+                font-size: 16px;
+            }
+
+            .input-group-text {
+                width: 42px;
+                justify-content: center;
+                background: #e9edf3;
+                border-left: 0;
+            }
+
+            .remember-row {
+                margin-left: 58px;
+                margin-top: -2px;
+                margin-bottom: 12px;
+                font-size: 14px;
+                color: #555;
+            }
+
+            .remember-row input {
+                cursor: pointer;
+            }
+
+            .remember-row label {
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .btn-login {
+                height: 38px;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .error-message {
+                color: red;
+                font-size: 15px;
+                margin-top: 12px;
+                text-align: center;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <div class="login-box">
+
+            <div class="login-header">
+                <img src="~/images/apps/applogo.png" class="login-logo" alt="logo" />
+                <span>GoodJOB</span>
+            </div>
+
+            <div class="login-body">
+                <form asp-controller="Login" asp-action="Index" method="post">
+
+                    <div class="login-row">
+
+                        <label class="login-label">帳號：</label>
+
+                        <div class="input-group">
+                            <input type="text" name="userId" class="form-control" autocomplete="off" required>
+                            <span class="input-group-text">👤</span>
+                        </div>
+
+                    </div>
+
+                    <div class="login-row">
+
+                        <label class="login-label">密碼：</label>
+
+                        <div class="input-group">
+                            <input type="password" name="password" class="form-control" autocomplete="new-password"
+                                   required>
+
+                            <span class="input-group-text">🔒</span>
+                        </div>
+                    </div>
+                    <div class="form-check remember-row">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe"
+                               value="true" />
+
+                        <label class="form-check-label" for="rememberMe">
+                            記住登入，下次不用重新輸入
+                        </label>
+                    </div>
+
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary btn-login">
+                            登入
+                        </button>
+                    </div>
+
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="error-message">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+
+
+            
+
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

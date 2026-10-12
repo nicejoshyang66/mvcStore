@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - GoodJob</title>
+    <link rel="stylesheet" href="~/AdminLteA/dist/css/adminlte.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@fontsource/source-sans-3@5.0.12/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/navigation.css" asp-append-version="true" />
+
+</head>
+
+<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
+    <div class="app-wrapper">
+
+        @* 上方導覽列 *@
+        <nav id="header-app" class="app-header navbar navbar-expand bg-info"
+             data-logout-url="@Url.Content("~/api/auth/logout")">
+            @Html.AntiForgeryToken()
+
+            <div class="container-fluid">
+                @* 左側：側邊選單按鈕、首頁 *@
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-lte-toggle="sidebar" role="button" aria-label="切換側邊選單" href="#">
+                            <i class="bi bi-list"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-sm-inline">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">首頁</a>
+                    </li>
+                </ul>
+
+                @* 右側：使用者、登出功能 *@
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <button class="nav-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>使用者
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
+                            <button type="button" class="dropdown-item" v-on:click="logout" v-bind:disabled="busy">
+                                <i class="fas fa-sign-out-alt me-2"></i>登出系統
+                            </button>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item"><i class="fas fa-key me-2"></i>重設密碼</a>
+                            <a href="#" class="dropdown-item"><i class="fas fa-lock me-2"></i>權限授權 </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <span v-cloak v-if="error" role="alert" class="text-warning">
+                    {{ error }}
+                </span>
+            </div>
+        </nav>
+
+        @* 左側選單 *@
+        <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
+            <div class="sidebar-brand bg-black">
+                <a asp-controller="Home" asp-action="Index" class="brand-link">
+                    <img src="~/AdminLteA/dist/assets/img/AdminLTELogo.png" alt="GoodJob"
+                         class="brand-image opacity-75 shadow">
+                    <span class="brand-text fw-light">GoodJob</span>
+                </a>
+            </div>
+
+            <div id="menu-app" class="sidebar-wrapper" data-menu-url="@Url.Content("~/api/menu")"
+                 data-login-url="@Url.Content("~/Login")" v-cloak>
+                @* 登入者資訊 *@
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="info text-white">登入者：{{userId.toUpperCase()}}-{{userName}}</div>
+                </div>
+                <p v-if="loading">選單載入中…</p>
+                <div v-if="error" role="alert">
+                    {{error}}
+                    <button class="btn btn-sm btn-light" v-on:click="load">
+                        重試2
+                    </button>
+                </div>
+                @* 動態選單 *@
+                @* <nav class="mt-2" aria-label="主選單"> *@
+                <nav class="mt-2" aria-label="主選單">
+                    @* <ul class="nav sidebar-menu flex-column" id="navigation"> *@
+                    <ul class="nav sidebar-menu flex-column" id="navigation">
+                        <li v-for="parent in menu" v-bind:key="parent.id" class="nav-item" @* <li v-for="parent in menu" v-bind:key="parent.id" class="nav-item"> *@
+                            v-bind:class="{ 'menu-open': opened.includes(parent.id) }">
+                            <a href="#" class="nav-link" v-bind:class="{ active: opened.includes(parent.id) }"
+                               v-bind:aria-expanded="opened.includes(parent.id)"
+                               v-on:click.prevent="toggle(parent.id)">
+                                <i class="nav-icon fas fa-folder"></i>
+                                <p>{{ parent.name }}<i class="nav-arrow bi bi-chevron-right"></i></p>
+                            </a>
+                            <ul class="nav nav-treeview"
+                                v-bind:style="{ display: opened.includes(parent.id) ? 'block' : 'none' }">
+                                <li v-for="child in parent.children" v-bind:key="child.id" class="nav-item">
+                                    <a v-bind:href="child.url" class="nav-link"
+                                       v-bind:class="{ active: isActive(child.url) }"
+                                       v-bind:aria-current="isActive(child.url) ? 'page' : null">
+                                        <i class="nav-icon fas fa-edit"></i>
+                                        <p>{{ child.name }}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        @* 各頁面的主要內容 *@
+        <main class="app-main">
+            <div class="container pb-3">
+                @RenderBody()
+            </div>
+        </main>
+
+        @* 頁尾 *@
+        <footer class="app-footer">
+            <div class="float-end d-none d-sm-inline">
+                version: 2026/4/11
+            </div>
+            <strong>Copyright &copy; 2014-2026 GoodJob.</strong>
+            All rights reserved.
+        </footer>
+    </div>
+
+    @* JavaScript 放在 body 結尾 *@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/AdminLteA/dist/js/adminlte.js"></script>
+    <script src="~/lib/vue/vue.global.prod.js" asp-append-version="true"></script>
+    <script src="~/js/navigation.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

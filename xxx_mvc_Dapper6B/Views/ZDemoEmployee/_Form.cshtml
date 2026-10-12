@@ -1,0 +1,123 @@
+@model mvc_Dapper.Models.Entity.z_demo_employee
+
+@using mvc_Dapper.Models.ViewModels
+
+@{
+    var departments = ViewBag.Departments as List<SelectOptionVM>;
+    var titles = ViewBag.Titles as List<SelectOptionVM>;
+}
+
+<div class="card">
+    <div class="card-header">
+        員工基本資料
+    </div>
+
+    <div class="card-body">
+
+        <div class="row mb-3">
+            <label asp-for="is_enabled" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="is_enabled" class="form-check-input mt-2" />
+                @* <span class="ms-2">啟用2</span> *@
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="mno" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="mno" class="form-control" />
+            </div>
+
+            <label asp-for="mname" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="mname" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="no_serial" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="no_serial" class="form-control" />
+            </div>
+
+            <label asp-for="code_gender" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <select asp-for="code_gender" class="form-select">
+                    <option value="">請選擇</option>
+                    <option value="M">男</option>
+                    <option value="F">女</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="dept_no" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <select asp-for="dept_no" class="form-select">
+                    <option value="">請選擇部門</option>
+
+                    @if (departments != null)
+                    {
+                        foreach (var item in departments)
+                        {
+                            <option value="@item.Value">
+                                @item.Value - @item.Text
+                            </option>
+                        }
+                    }
+                </select>
+            </div>
+
+            <label asp-for="title_no" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <select asp-for="title_no" class="form-select">
+                    <option value="">請選擇職稱</option>
+
+                    @if (titles != null)
+                    {
+                        foreach (var item in titles)
+                        {
+                            <option value="@item.Value">
+                                @item.Value - @item.Text
+                            </option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="date_birth" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="date_birth" asp-format="{0:yyyy-MM-dd}" type="date" class="form-control" />
+            </div>
+
+            <label asp-for="salary_base" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="salary_base" type="number" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="tel_home" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="tel_home" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="adr_home" class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <input asp-for="adr_home" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="remark" class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="remark" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>

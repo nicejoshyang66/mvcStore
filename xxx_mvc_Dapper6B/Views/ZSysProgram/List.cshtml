@@ -1,0 +1,50 @@
+﻿@model List<mvc_Dapper.Models.Entity.z_sys_program>
+
+@{
+    string? title = "系統程式資料維護";
+}
+
+<h1>@title</h1>
+
+<p>
+    <a asp-action="CreateMas" class="btn btn-success btn-sm">
+        <i class="bi bi-plus-circle"></i> Create Now
+    </a>
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model[0].is_enabled)</th>
+            <th>@Html.DisplayNameFor(model => model[0].mno)</th>
+            <th>@Html.DisplayNameFor(model => model[0].mname)</th>
+            <th>@Html.DisplayNameFor(model => model[0].code_name)</th>
+            <th>@Html.DisplayNameFor(model => model[0].no_sort)</th>
+            <th>@Html.DisplayNameFor(model => model[0].remark)</th>
+            <th>功能</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(x => item.is_enabled)</td>
+                <td>@Html.DisplayFor(x => item.mno)</td>
+                <td>@Html.DisplayFor(x => item.mname)</td>
+                <td>@Html.DisplayFor(x => item.code_name)</td>
+                <td>@Html.DisplayFor(x => item.no_sort)</td>
+                <td>@Html.DisplayFor(x => item.remark)</td>
+                <td class="text-nowrap">
+                   <a asp-action="Edit" asp-route-id="@item.mno" class="btn btn-outline-primary btn-sm me-1">Edit</a>
+                   <a asp-action="Delete" asp-route-id="@item.mno" class="btn btn-outline-danger btn-sm me-1">Delete</a>
+                   <a asp-action="ListDet" asp-route-parentno="@item.mno" class="btn btn-primary btn-sm">SubMenu</a>
+                </td>
+            </tr>
+
+        }
+
+    
+    </tbody>
+
+</table>

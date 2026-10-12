@@ -1,0 +1,292 @@
+﻿[
+    {
+        "rowid":  6,
+        "mno":  "MISP005",
+        "mname":  "系統程式資料維護",
+        "parentno":  "MIS",
+        "no_sort":  "00",
+        "controllername":  "ZSYSProgram",
+        "actionname":  "List",
+        "routename":  null
+    },
+    {
+        "rowid":  1,
+        "mno":  "MIS",
+        "mname":  "系統管理",
+        "parentno":  "",
+        "no_sort":  "01",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  14,
+        "mno":  "DSPP001",
+        "mname":  "語系基本資料維護",
+        "parentno":  "DSP",
+        "no_sort":  "01",
+        "controllername":  "PrgM",
+        "actionname":  "List",
+        "routename":  null
+    },
+    {
+        "rowid":  20,
+        "mno":  "SQLP001",
+        "mname":  "查詢表格(Table)",
+        "parentno":  "SQL",
+        "no_sort":  "01",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  30,
+        "mno":  "SYSP001",
+        "mname":  "系統預設參數設定",
+        "parentno":  "SYS",
+        "no_sort":  "01",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  31,
+        "mno":  "SYSP002",
+        "mname":  "電子郵件參數設定",
+        "parentno":  "SYS",
+        "no_sort":  "02",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  13,
+        "mno":  "DSP",
+        "mname":  "系統基本",
+        "parentno":  "",
+        "no_sort":  "02",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  21,
+        "mno":  "SQLP002",
+        "mname":  "查詢欄位(Column)",
+        "parentno":  "SQL",
+        "no_sort":  "02",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  15,
+        "mno":  "DSPP002",
+        "mname":  "國別基本資料維護",
+        "parentno":  "DSP",
+        "no_sort":  "02",
+        "controllername":  "PrgD",
+        "actionname":  "List22",
+        "routename":  null
+    },
+    {
+        "rowid":  3,
+        "mno":  "MISP002",
+        "mname":  "登入帳戶資料維護",
+        "parentno":  "MIS",
+        "no_sort":  "02",
+        "controllername":  "ZOrgUser",
+        "actionname":  "List",
+        "routename":  "code_user=u"
+    },
+    {
+        "rowid":  16,
+        "mno":  "DSPP003",
+        "mname":  "縣市基本資料維護",
+        "parentno":  "DSP",
+        "no_sort":  "03",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  22,
+        "mno":  "SQLP003",
+        "mname":  "查詢檢視(View)",
+        "parentno":  "SQL",
+        "no_sort":  "03",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  19,
+        "mno":  "SQL",
+        "mname":  "資料管理",
+        "parentno":  "",
+        "no_sort":  "03",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  32,
+        "mno":  "SYSP003",
+        "mname":  "專案系統檔案管理",
+        "parentno":  "SYS",
+        "no_sort":  "03",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  33,
+        "mno":  "SYSP004",
+        "mname":  "專案圖片檔案管理",
+        "parentno":  "SYS",
+        "no_sort":  "04",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  29,
+        "mno":  "SYS",
+        "mname":  "系統設定",
+        "parentno":  "",
+        "no_sort":  "04",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  23,
+        "mno":  "SQLP004",
+        "mname":  "查詢觸發器(Trigger)",
+        "parentno":  "SQL",
+        "no_sort":  "04",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  17,
+        "mno":  "DSPP004",
+        "mname":  "縣市區域資料維護",
+        "parentno":  "DSP",
+        "no_sort":  "04",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  5,
+        "mno":  "MISP004",
+        "mname":  "資管帳戶資料維護",
+        "parentno":  "MIS",
+        "no_sort":  "04",
+        "controllername":  "ZOrgUser",
+        "actionname":  "List",
+        "routename":  "code_user=m"
+    },
+    {
+        "rowid":  18,
+        "mno":  "DSPP005",
+        "mname":  "多國語系對照維護",
+        "parentno":  "DSP",
+        "no_sort":  "05",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  24,
+        "mno":  "SQLP005",
+        "mname":  "查詢程序(Procedure)",
+        "parentno":  "SQL",
+        "no_sort":  "05",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  34,
+        "mno":  "SYSP005",
+        "mname":  "系統資料庫初始化",
+        "parentno":  "SYS",
+        "no_sort":  "05",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  73,
+        "mno":  "TES",
+        "mname":  "測試類別 ",
+        "parentno":  "",
+        "no_sort":  "05",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  25,
+        "mno":  "SQLP006",
+        "mname":  "查詢函數(Function)",
+        "parentno":  "SQL",
+        "no_sort":  "06",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  7,
+        "mno":  "MISP006",
+        "mname":  "帳戶權限群組維護",
+        "parentno":  "MIS",
+        "no_sort":  "06",
+        "controllername":  "ZSysGroup",
+        "actionname":  "List",
+        "routename":  null
+    },
+    {
+        "rowid":  26,
+        "mno":  "SQLP007",
+        "mname":  "查詢索引(Index)",
+        "parentno":  "SQL",
+        "no_sort":  "07",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  27,
+        "mno":  "SQLP008",
+        "mname":  "查詢筆數統計",
+        "parentno":  "SQL",
+        "no_sort":  "08",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    },
+    {
+        "rowid":  9,
+        "mno":  "MISP008",
+        "mname":  "群組權限資料維護",
+        "parentno":  "MIS",
+        "no_sort":  "08",
+        "controllername":  "GroupSecurity",
+        "actionname":  "List",
+        "routename":  null
+    },
+    {
+        "rowid":  28,
+        "mno":  "SQLR001",
+        "mname":  "列印資料結構一覽表",
+        "parentno":  "SQL",
+        "no_sort":  "09",
+        "controllername":  null,
+        "actionname":  null,
+        "routename":  null
+    }
+]

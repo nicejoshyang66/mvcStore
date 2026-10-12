@@ -1,0 +1,394 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.red {
+  color: red;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.app-header,
+.app-header.navbar {
+  background-color: #2f3542 !important;
+  color: #eaeaea !important;
+  border-bottom: 1px solid #444;
+}
+
+.app-header .nav-link,
+.app-header .navbar-nav .nav-link,
+.app-header a,
+.app-header i {
+  color: #eaeaea !important;
+}
+
+.app-header .nav-link:hover {
+  color: #ffffff !important;
+}
+
+
+/* =========================
+   Sidebar
+========================= */
+
+.app-sidebar,
+.app-sidebar .sidebar-wrapper {
+  background-color: #343a40 !important;
+  color: #d8d8d8 !important;
+}
+
+
+/* menu 文字 */
+
+.app-sidebar a,
+.app-sidebar .nav-link,
+.app-sidebar .nav-link p,
+.app-sidebar .nav-icon,
+.app-sidebar .nav-arrow,
+.app-sidebar .brand-text {
+  color: #d8d8d8 !important;
+}
+
+
+/* hover */
+
+.app-sidebar .nav-link:hover {
+  background-color: #495057 !important;
+  color: #ffffff !important;
+  border-radius: 6px;
+}
+
+
+/* active */
+
+.app-sidebar .nav-link.active {
+  background-color: #495057 !important;
+  color: #ffd43b !important;
+  border-radius: 6px;
+}
+
+
+/* active icon */
+
+.app-sidebar .nav-link.active p,
+.app-sidebar .nav-link.active i {
+  color: #ffd43b !important;
+}
+
+/* master/detail*/
+.master-card {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background: #fff;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.master-table td {
+  padding: 8px;
+  border: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.master-title {
+  width: 120px;
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.detail-table thead {
+  background-color: #dbe8fb;
+}
+
+.detail-table tbody tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.detail-table th,
+.detail-table td {
+  vertical-align: middle;
+}
+
+/*  old version series */
+.old-form-card {
+  max-width: 760px;
+  margin: 20px auto;
+  border: 1px solid #9aa7b0;
+}
+
+.old-form-header {
+  background: linear-gradient(#4b4b4b, #222);
+  color: white;
+  padding: 8px 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.old-form-body {
+  background-color: #eef3f7;
+  padding: 18px 20px;
+}
+
+.old-label {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: right;
+  padding-top: 6px;
+}
+
+.old-input {
+  height: 34px;
+  border: 1px solid #9aa7b0;
+  border-radius: 0;
+}
+
+.old-btn-area {
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* _layout */
+/* 子選單被選到時，文字與 icon 變黃色 */
+.sidebar-menu .nav-treeview .nav-link.active p,
+.sidebar-menu .nav-treeview .nav-link.active i {
+  color: yellow !important;
+}
+
+.sidebar-menu .nav-treeview .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* ===== 右上角使用者下拉選單：避免變灰、半透明、被蓋住 ===== */
+.app-header .dropdown-menu {
+  background-color: #ffffff !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+  border: 1px solid #dee2e6 !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15) !important;
+}
+
+.app-header .dropdown-menu .dropdown-item {
+  color: #212529 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  background-color: #ffffff !important;
+}
+
+.app-header .dropdown-menu .dropdown-item i {
+  color: #212529 !important;
+  opacity: 1 !important;
+}
+
+.app-header .dropdown-menu .dropdown-item:hover {
+  background-color: #f1f3f5 !important;
+  color: #000000 !important;
+}
+
+/* Login */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 360px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.login-header {
+  height: 48px;
+  background: #888;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 26px;
+}
+
+.login-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.login-body {
+  padding: 24px 22px 18px 22px;
+}
+
+.login-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.login-label {
+  width: 58px;
+  margin: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+/* width */
+
+.w50 {
+  width: 50px;
+}
+
+.w100 {
+  width: 100px
+}
+
+.w120 {
+  width: 120px
+}
+
+.w150 {
+  width: 150px;
+}
+
+.w180 {
+  width: 150px;
+}
+
+
+/* page title */
+.page-title-box {
+  border-left: 6px solid #0d6efd;
+  background-color: #f3f7ff;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  border: 1px solid #dbe7ff;
+}
+
+.page-title-box h3 {
+  margin: 0;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.section-title {
+  border-left: 5px solid #6c757d;
+  background-color: #f8f9fa;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #343a40;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.section-title-primary {
+  border-left-color: #0d6efd;
+}
+
+.section-title-success {
+  border-left-color: #198754;
+}
+
+.section-title-info {
+  border-left-color: #0dcaf0;
+}
+
+.detail-card {
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.detail-card .card-header {
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 0;
+}
+
+.detail-card .card-body {
+  padding: 20px;
+  border-top: 1px solid #dee2e6;
+  background-color: #fff;
+}
+
+.detail-info-table {
+  margin-bottom: 0;
+  border: 1px solid #ced4da;
+}
+
+.detail-info-table th,
+.detail-info-table td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle;
+  padding: 10px 12px;
+}
+
+.detail-info-table th {
+  width: 180px;
+  background-color: #f8f9fa;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.history-table {
+  border: 1px solid #ced4da;
+  margin-bottom: 0;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle;
+  padding: 10px 12px;
+}
+
+.history-table thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.code-name-code {
+  display: inline-block;
+  min-width: 80px;
+}
+
+.code-name-text {
+  display: inline-block;
+  color: #374151;
+}
+
+.button-area {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*  */

@@ -1,0 +1,74 @@
+@model mvc_Dapper.Models.Entity.z_sys_group
+
+@{
+    ViewData["Title"] = "刪除群組";
+}
+
+<div class="card old-form-card shadow">
+
+    <div class="old-form-header">
+        刪除群組
+    </div>
+
+    <div class="old-form-body">
+
+        <div class="alert alert-danger">
+            確定要刪除此筆資料嗎？
+        </div>
+
+        <div class="row mb-2">
+            <label class="col-md-3 old-label">啟用</label>
+            <div class="col-md-9 pt-2">
+                @if (Model.is_enabled)
+                {
+                    <span class="badge bg-success">啟用</span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary">停用</span>
+                }
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="col-md-3 old-label">代號</label>
+            <div class="col-md-9">
+                <div class="old-display">@Model.mno</div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="col-md-3 old-label">名稱</label>
+            <div class="col-md-9">
+                <div class="old-display">@Model.mname</div>
+            </div>
+        </div>
+
+        <div class="row mb-2">
+            <label class="col-md-3 old-label">備註</label>
+            <div class="col-md-9">
+                <div class="old-display">@Model.remark</div>
+            </div>
+        </div>
+
+        <form asp-action="Delete" method="post">
+
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" name="rowid" value="@Model.rowid" />
+
+            <div class="old-btn-area">
+                <button type="submit" class="btn btn-danger btn-sm">
+                    <i class="bi bi-trash"></i> 確定刪除
+                </button>
+
+                <a asp-action="List" class="btn btn-secondary btn-sm">
+                    <i class="bi bi-arrow-return-left"></i> 返回
+                </a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

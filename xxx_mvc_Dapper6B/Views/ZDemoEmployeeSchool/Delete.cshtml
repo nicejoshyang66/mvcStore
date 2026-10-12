@@ -1,0 +1,40 @@
+
+@model mvc_Dapper.Models.Entity.z_demo_employee_school
+
+@{
+    ViewData["Title"] = "刪除學歷";
+}
+
+<h3 class="mb-3 text-danger">刪除學歷</h3>
+
+<div class="alert alert-danger">
+    確定要刪除這筆學歷資料嗎？
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th style="width:150px;">員工編號</th>
+        <td>@Model.employee_no</td>
+    </tr>
+    <tr>
+        <th>學校名稱</th>
+        <td>@Model.name_school</td>
+    </tr>
+    <tr>
+        <th>科系</th>
+        <td>@Model.name_subject</td>
+    </tr>
+</table>
+
+<form asp-action="DeleteConfirm" method="post">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="rowid" value="@Model.rowid" />
+    <input type="hidden" name="employeeNo" value="@Model.employee_no" />
+
+    <button type="submit" class="btn btn-danger">確定刪除</button>
+
+    <a asp-action="List" asp-route-employeeNo="@Model.employee_no" class="btn btn-secondary">
+        返回
+    </a>
+</form>

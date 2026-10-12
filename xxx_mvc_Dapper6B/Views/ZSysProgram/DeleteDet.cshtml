@@ -1,0 +1,108 @@
+@model mvc_Dapper.Models.Entity.z_sys_program
+
+@{
+    ViewData["Titlt"] = "Delete";
+}
+
+<h1 class="text-danger">Delete Details</h1>
+
+<h4>z_sys_program</h4>
+
+<div class="alert alert-warning">
+    您確定要刪除此筆資料嗎？
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-light">
+                <strong>明細資料</strong>
+            </div>
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">是否啟用</label>
+                    <input value="@(Model.is_enabled ? "yes" : "no")" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">主階代碼</label>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input value="@Model.parentno" class="form-control bg-light" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <input value="@ViewBag.ParentName" class="form-control bg-light" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.mno)
+                    </label>
+                    <input asp-for="mno" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.mname)
+                    </label>
+                    <input asp-for="mname" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.code_no)
+                    </label>
+                    <input value="@(Model.code_no == "M" ? "資訊管理員" : "一般使用者")" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.no_sort)
+                    </label>
+                    <input asp-for="no_sort" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.controllername)
+                    </label>
+                    <input asp-for="controllername" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.actionname)
+                    </label>
+                    <input asp-for="actionname" class="form-control bg-light" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">
+                        @Html.DisplayNameFor(model => model.remark)
+                    </label>
+                    <input asp-for="remark" class="form-control bg-light" readonly>
+                </div>
+            </div>
+        </div>
+
+        <form asp-action="DeleteDet" class="mt-3">
+            <input type="hidden" asp-for="rowid">
+            <input type="hidden" asp-for="parentno">
+
+            <input type="submit" value="Delete" class="btn btn-danger">
+
+            <a asp-action="ListDet" asp-route-parentno="@Model.parentno" class="btn btn-secondary">
+                Back To List
+            </a>
+
+        </form>
+
+    </div>
+</div>
+

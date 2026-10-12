@@ -1,0 +1,81 @@
+@model List<mvc_Dapper.Models.Entity.z_demo_employee_experience>
+
+@{
+    ViewData["Title"] = "經歷資料維護";
+    string employeeNo = "";
+
+    if (ViewBag.EmployeeNo != null)
+    {
+        employeeNo = ViewBag.EmployeeNo;
+    }
+}
+
+<h3 class="mb-3">經歷資料維護</h3>
+
+<div class="mb-3">
+    <span class="badge bg-secondary">員工編號：@employeeNo</span>
+</div>
+
+<div class="mb-3">
+    <a asp-action="Create" asp-route-employeeNo="@employeeNo" class="btn btn-primary">
+        新增經歷
+    </a>
+
+    <a asp-controller="ZDemoEmployee" asp-action="List" class="btn btn-secondary">
+        返回員工列表
+    </a>
+</div>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="table-light">
+        <tr>
+            <th>公司名稱</th>
+            <th>職稱</th>
+            <th class="text-end">薪資</th>
+            <th>到職日期</th>
+            <th>離職日期</th>
+            <th>備註</th>
+            <th style="width:160px;">功能</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Count == 0)
+        {
+            <tr>
+                <td colspan="7" class="text-center text-muted">
+                    目前沒有經歷資料
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.name_company</td>
+                    <td>@item.title_company</td>
+                    <td class="text-end">
+                        @(item.base_salary.HasValue ? item.base_salary.Value.ToString("N0") : "")
+                    </td>
+                    <td>
+                        @(item.date_start.HasValue ? item.date_start.Value.ToString("yyyy-MM-dd") : "")
+                    </td>
+                    <td>
+                        @(item.date_end.HasValue ? item.date_end.Value.ToString("yyyy-MM-dd") : "")
+                    </td>
+                    <td>@item.remark</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.rowid" class="btn btn-sm btn-warning">
+                            編輯
+                        </a>
+
+                        <a asp-action="Delete" asp-route-id="@item.rowid" class="btn btn-sm btn-danger">
+                            刪除
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

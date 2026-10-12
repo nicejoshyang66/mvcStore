@@ -1,0 +1,56 @@
+@model mvc_Dapper.Models.Entity.z_demo_employee_experience
+
+<div class="card">
+    <div class="card-header">
+        經歷資料
+    </div>
+
+    <div class="card-body">
+
+        <div class="row mb-3">
+            <label asp-for="employee_no" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="employee_no" class="form-control" readonly />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="name_company" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="name_company" class="form-control" />
+            </div>
+
+            <label asp-for="title_company" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="title_company" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="base_salary" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="base_salary" type="number" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="date_start" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="date_start" asp-format="{0:yyyy-MM-dd}" type="date" class="form-control" />
+            </div>
+
+            <label asp-for="date_end" class="col-md-2 col-form-label"></label>
+            <div class="col-md-4">
+                <input asp-for="date_end" asp-format="{0:yyyy-MM-dd}" type="date" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label asp-for="remark" class="col-md-2 col-form-label"></label>
+            <div class="col-md-10">
+                <textarea asp-for="remark" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+
+    </div>
+</div>

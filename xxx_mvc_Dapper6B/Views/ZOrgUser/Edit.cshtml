@@ -1,0 +1,196 @@
+@model mvc_Dapper.Models.Entity.z_org_user
+
+@{
+    ViewData["Title"] = "修改使用者";
+}
+
+
+<div class="card old-form-card shadow">
+
+    <div class="old-form-header">
+        修改使用者
+    </div>
+
+    <div class="old-form-body">
+
+        <form asp-action="Edit" asp-route-code_user="@ViewBag.CodeUser"  method="post">
+
+            @Html.AntiForgeryToken()
+
+            <input asp-for="rowid" type="hidden" />
+            <input asp-for="code_user" type="hidden" value="@ViewBag.CodeUser">
+
+            <div asp-validation-summary="ModelOnly"
+                 class="text-danger mb-2">
+            </div>
+
+            <!-- 啟用 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="is_enabled"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9 pt-2">
+
+                    <input asp-for="is_enabled"
+                           class="form-check-input" />
+
+                    <span asp-validation-for="is_enabled"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- 代號 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="mno"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="mno"
+                           class="form-control old-input"
+                           maxlength="50" />
+
+                    <span asp-validation-for="mno"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- 名稱 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="mname"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="mname"
+                           class="form-control old-input"
+                           maxlength="50" />
+
+                    <span asp-validation-for="mname"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- 電話 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="tel_user"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="tel_user"
+                           class="form-control old-input"
+                           maxlength="50" />
+
+                </div>
+
+            </div>
+
+            <!-- 手機 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="mobile_user"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="mobile_user"
+                           class="form-control old-input"
+                           maxlength="50" />
+
+                </div>
+
+            </div>
+
+            <!-- 電子郵件 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="email_user"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="email_user"
+                           class="form-control old-input"
+                           maxlength="250" />
+
+                </div>
+
+            </div>
+
+            <!-- 備註 -->
+
+            <div class="row mb-2">
+
+                <label asp-for="remark"
+                       class="col-md-3 old-label">
+                </label>
+
+                <div class="col-md-9">
+
+                    <input asp-for="remark"
+                           class="form-control old-input"
+                           maxlength="250" />
+
+                </div>
+
+            </div>
+
+            <div class="old-btn-area">
+
+                <button type="submit"
+                        class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-save"></i>
+                    儲存
+
+                </button>
+
+                <a asp-action="List" asp-route-code_user="@ViewBag.CodeUser"
+                   class="btn btn-secondary btn-sm">
+
+                    <i class="bi bi-arrow-return-left"></i>
+                    返回
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}

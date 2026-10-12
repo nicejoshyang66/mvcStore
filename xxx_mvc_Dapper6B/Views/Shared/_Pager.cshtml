@@ -1,0 +1,122 @@
+@model mvc_Dapper.Models.ViewModel.PageInfo
+
+@{
+    int page = Model.Page;
+    int pageSize = Model.PageSize;
+    int totalPages = Model.TotalPages;
+    int totalCount = Model.TotalCount;
+
+    int startPage = page - 2;
+    int endPage = page + 2;
+
+    if (startPage < 1)
+    {
+        startPage = 1;
+    }
+
+    if (endPage > totalPages)
+    {
+        endPage = totalPages;
+    }
+}
+
+@if (totalCount > 0)
+{
+    <div class="d-flex justify-content-between align-items-center mt-3">
+
+        <div>
+            共 @totalCount 筆，
+            目前顯示第 @Model.StartItem - @Model.EndItem 筆
+        </div>
+
+        <nav>
+            <ul class="pagination mb-0">
+
+                @if (page > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="@Model.ActionName"
+                           asp-route-page="1"
+                           asp-route-pageSize="@pageSize">
+                            第一頁
+                        </a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="@Model.ActionName"
+                           asp-route-page="@(page - 1)"
+                           asp-route-pageSize="@pageSize">
+                            上一頁
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">第一頁</span>
+                    </li>
+
+                    <li class="page-item disabled">
+                        <span class="page-link">上一頁</span>
+                    </li>
+                }
+
+                @for (int i = startPage; i <= endPage; i++)
+                {
+                    if (i == page)
+                    {
+                        <li class="page-item active">
+                            <span class="page-link">@i</span>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="page-item">
+                            <a class="page-link"
+                               asp-action="@Model.ActionName"
+                               asp-route-page="@i"
+                               asp-route-pageSize="@pageSize">
+                                @i
+                            </a>
+                        </li>
+                    }
+                }
+
+                @if (page < totalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="@Model.ActionName"
+                           asp-route-page="@(page + 1)"
+                           asp-route-pageSize="@pageSize">
+                            下一頁
+                        </a>
+                    </li>
+
+                    <li class="page-item">
+                        <a class="page-link"
+                           asp-action="@Model.ActionName"
+                           asp-route-page="@totalPages"
+                           asp-route-pageSize="@pageSize">
+                            最末頁
+                        </a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">下一頁</span>
+                    </li>
+
+                    <li class="page-item disabled">
+                        <span class="page-link">最末頁</span>
+                    </li>
+                }
+
+            </ul>
+        </nav>
+
+    </div>
+}
