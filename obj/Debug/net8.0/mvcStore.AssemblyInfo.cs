@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("mvcStore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aacedbc7db6c23fd2b1e4770045fbbb8e0cb6c8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2e974b5f83dce92daa6de707045739081183cee")]
 [assembly: System.Reflection.AssemblyProductAttribute("mvcStore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("mvcStore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
