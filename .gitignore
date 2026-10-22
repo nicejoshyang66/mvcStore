@@ -1,0 +1,15 @@
+# Tool / editor folders
+.verification/
+.vs/
+.vscode/
+
+# Build output
+bin/
+obj/
+
+# Node packages (restore with: npm install)
+node_modules/
+
+# User-specific files
+*.user
+*.suo
